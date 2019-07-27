@@ -12,7 +12,6 @@ public class Expansion {
 	private String name;
 	private String ptBrName;
 	private String linkName;
-	private String searchName;
 	private String code;
 	private LocalDate launchDate;
 	private Integer expansionCategoryId;
