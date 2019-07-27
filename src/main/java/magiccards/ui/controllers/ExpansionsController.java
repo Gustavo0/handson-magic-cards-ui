@@ -3,6 +3,7 @@ package magiccards.ui.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,18 +16,18 @@ import magiccards.ui.entities.TablePage;
 import magiccards.ui.proxies.ExpansionsFacadeProxy;
 
 @Controller
+@RequestMapping(path="/expansions")
 public class ExpansionsController {
 
     @Autowired
     private ExpansionsFacadeProxy expansionsFacadeProxy;
 
-    @RequestMapping(value="/expansions", method = RequestMethod.GET)
+    @GetMapping
     public String list() {
-
         return "expansions/list";
     }
 
-    @RequestMapping(value="/expansions/data", method = RequestMethod.GET)
+    @RequestMapping(value="/data", method = RequestMethod.GET)
     public @ResponseBody TablePage<Expansion> listPaged(@RequestParam("draw")int draw, @RequestParam("start")int start,@RequestParam("length")int length) {
 
         int pageNumber = (start/length) + 1;
@@ -40,12 +41,12 @@ public class ExpansionsController {
         return result;
     }
 
-    @RequestMapping(value="/expansions/create", method = RequestMethod.GET)
+    @RequestMapping(value="/create", method = RequestMethod.GET)
     public String create() {
         return "expansions/create";
     }
 
-    @RequestMapping(value="/expansions/update/{id}", method = RequestMethod.GET)
+    @RequestMapping(value="/update/{id}", method = RequestMethod.GET)
     public String update(@PathVariable("id")String id, Model model) {
 
         Expansion expansion = expansionsFacadeProxy.getExpansionById(id);
@@ -53,7 +54,7 @@ public class ExpansionsController {
         return "expansions/update";
     }
 
-    @RequestMapping(value="/expansions/create", method = RequestMethod.POST)
+    @RequestMapping(value="/create", method = RequestMethod.POST)
     public String create(Expansion expansion) {
 
         expansionsFacadeProxy.create(expansion);
@@ -61,7 +62,7 @@ public class ExpansionsController {
         return "redirect:/expansions";
     }
 
-    @RequestMapping(value="/expansions/update", method = RequestMethod.POST)
+    @RequestMapping(value="/update", method = RequestMethod.POST)
     public String update(Expansion expansion) {
 
         expansionsFacadeProxy.update(expansion);
@@ -69,7 +70,7 @@ public class ExpansionsController {
         return "redirect:/expansions";
     }
 
-    @RequestMapping(value="/expansions/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value="/delete/{id}", method = RequestMethod.GET)
     public String delete(@PathVariable("id")String id) {
 
         expansionsFacadeProxy.delete(id);
