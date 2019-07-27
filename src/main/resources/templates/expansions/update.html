@@ -11,7 +11,7 @@
                 <div class="title">
                     <h2>Expansions List</h2>
                 </div>
-                <form action="/expansions/update" th:object="${card}" method="post">
+                <form action="/cards/expansions/update" th:object="${expansion}" method="post">
                     <label for="expasionId">Expansion Id:</label>
                     <input type="text" id="expasionId" name="expasionId" th:value="*{expasionId}" /><br /><br />
                     <label for="name">Expansion Name:</label>
