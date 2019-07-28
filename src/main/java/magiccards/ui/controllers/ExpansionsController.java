@@ -45,13 +45,13 @@ public class ExpansionsController {
         return "expansions/create";
     }
 
-//    @RequestMapping(value="/expansions/update/{id}", method = RequestMethod.GET)
-//    public String update(@PathVariable("id")Integer id, Model model) {
-//
-//        Expansion expansion = expansionsFacadeProxy.getExpansionById(id);
-//        model.addAttribute("expansion", expansion);
-//        return "expansions/update";
-//    }
+    @RequestMapping(value="/expansions/update/{id}", method = RequestMethod.GET)
+    public String update(@PathVariable("id")Integer id, Model model) {
+
+        Expansion expansion = expansionsFacadeProxy.getExpansionById(id);
+        model.addAttribute("expansion", expansion);
+        return "expansions/update";
+    }
 
     @RequestMapping(value="/expansions/create", method = RequestMethod.POST)
     public String create(Expansion expansion) {
@@ -61,9 +61,9 @@ public class ExpansionsController {
         return "redirect:/expansions";
     }
 
-    @RequestMapping(value="/expansions/update/{id}", method = RequestMethod.GET)
-    public String update(@PathVariable("id")Integer id, Model model) {
-    	Expansion expansion = expansionsFacadeProxy.getExpansionById(id);
+    @RequestMapping(value="/expansions/update", method = RequestMethod.POST)
+    public String update(Expansion expansion) {
+
         expansionsFacadeProxy.update(expansion);
 
         return "redirect:/expansions";
