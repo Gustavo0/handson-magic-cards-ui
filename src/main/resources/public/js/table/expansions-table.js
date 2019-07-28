@@ -3,7 +3,7 @@ $(document).ready(function() {
         "bFilter":false,
         "processing": true,
         "serverSide": true,
-        "ajax": "/cards/expansions/data",
+        "ajax": "/expansions/data",
         "columns": [
             {"data":"expansionId"},
             {"data":"name"},
