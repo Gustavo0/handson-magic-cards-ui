@@ -46,7 +46,7 @@ public class ExpansionsController {
     }
 
     @RequestMapping(value="/expansions/update/{id}", method = RequestMethod.GET)
-    public String update(@PathVariable("id")String id, Model model) {
+    public String update(@PathVariable("id")Integer id, Model model) {
 
         Expansion expansion = expansionsFacadeProxy.getExpansionById(id);
         model.addAttribute("expansion", expansion);
@@ -70,7 +70,7 @@ public class ExpansionsController {
     }
 
     @RequestMapping(value="/expansions/delete/{id}", method = RequestMethod.GET)
-    public String delete(@PathVariable("id")String id) {
+    public String delete(@PathVariable("id")Integer id) {
 
         expansionsFacadeProxy.delete(id);
 

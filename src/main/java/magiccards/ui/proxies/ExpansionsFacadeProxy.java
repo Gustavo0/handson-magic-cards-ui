@@ -15,7 +15,7 @@ import magiccards.ui.entities.Page;
 public interface ExpansionsFacadeProxy {
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET, produces = "application/json")
-    Expansion getExpansionById(@PathVariable("id") String expansionId);
+    Expansion getExpansionById(@PathVariable("id") Integer expansionId);
 
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
     Page<Expansion> getExpansions(@RequestParam(value="page")int pageNumber, @RequestParam(value="size")int size);
@@ -27,5 +27,5 @@ public interface ExpansionsFacadeProxy {
     void update(Expansion expansion);
 
     @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
-    void delete(@PathVariable("id")String id);
+    void delete(@PathVariable("id")Integer id);
 }
