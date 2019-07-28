@@ -40,7 +40,7 @@ public class ExpansionsController {
         return result;
     }
 
-    @RequestMapping(value="/expansions/create", method = RequestMethod.GET)
+    @RequestMapping(value="/cards/expansions/create", method = RequestMethod.GET)
     public String create() {
         return "expansions/create";
     }
