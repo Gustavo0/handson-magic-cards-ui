@@ -69,7 +69,7 @@ public class ExpansionsController {
         return "redirect:/expansions";
     }
 
-    @RequestMapping(value="/expansions/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value="/expansions/delete/{id}", method = RequestMethod.DELETE)
     public String delete(@PathVariable("id")Integer id) {
 
         expansionsFacadeProxy.delete(id);
