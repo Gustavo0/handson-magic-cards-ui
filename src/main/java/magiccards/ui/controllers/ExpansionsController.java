@@ -45,10 +45,10 @@ public class ExpansionsController {
         return "expansions/create";
     }
 
-    @RequestMapping(value="/expansions/update/{expansionId}", method = RequestMethod.GET)
-    public String update(@PathVariable("expansionId")Integer expansionId, Model model) {
+    @RequestMapping(value="/expansions/update/{id}", method = RequestMethod.GET)
+    public String update(@PathVariable("id")Integer id, Model model) {
 
-        Expansion expansion = expansionsFacadeProxy.getExpansionById(expansionId);
+        Expansion expansion = expansionsFacadeProxy.getExpansionById(id);
         model.addAttribute("expansion", expansion);
         return "expansions/update";
     }
@@ -69,10 +69,10 @@ public class ExpansionsController {
         return "redirect:/expansions";
     }
 
-    @RequestMapping(value="/expansions/delete/{expansionId}", method = RequestMethod.GET)
-    public String delete(@PathVariable("expansionId")Integer expansionId) {
+    @RequestMapping(value="/expansions/delete/{id}", method = RequestMethod.GET)
+    public String delete(@PathVariable("id")Integer id) {
 
-        expansionsFacadeProxy.delete(expansionId);
+        expansionsFacadeProxy.delete(id);
 
         return "redirect:/expansions";
     }
