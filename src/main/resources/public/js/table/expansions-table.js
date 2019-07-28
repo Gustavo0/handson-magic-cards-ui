@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.dataTable').DataTable( {
+    $('.dataTableExpansion').DataTable( {
         "bFilter":false,
         "processing": true,
         "serverSide": true,
@@ -7,7 +7,7 @@ $(document).ready(function() {
         "columns": [
             {"data":"expansionId"},
             {"data":"name"},
-            {"data":"ptBrName"},
+            {"data":"portugueseName"},
             {
                 "data": null,
                 "render": function (data, type, row, meta) {

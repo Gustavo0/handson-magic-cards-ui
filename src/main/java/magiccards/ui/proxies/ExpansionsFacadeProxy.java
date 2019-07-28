@@ -11,7 +11,7 @@ import magiccards.ui.entities.Expansion;
 import magiccards.ui.entities.Page;
 
 @Component
-@FeignClient(url= "${rest.client.cards.url:default}/expansions", name="expansions")
+@FeignClient(url= "${rest.client.expansions.url:default}/expansions", name="expansions")
 public interface ExpansionsFacadeProxy {
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET, produces = "application/json")

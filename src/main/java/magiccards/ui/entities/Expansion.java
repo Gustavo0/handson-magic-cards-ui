@@ -1,6 +1,8 @@
 package magiccards.ui.entities;
 
-import java.time.LocalDate;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,8 +15,9 @@ public class Expansion {
 	private String ptBrName;
 	private String linkName;
 	private String code;
-	private LocalDate launchDate;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date launchDate;
 	private Integer expansionCategoryId;
-	private Boolean isPromo;
-	private Boolean isLegal;
+	private boolean isPromo;
+	private boolean isLegal;
 }

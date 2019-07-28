@@ -3,6 +3,7 @@ server:
 
 rest.client:
   cards.url: http://localhost:8081
+  expansions.url: http://localhost:8081
 
 logging:
   level:
