@@ -61,7 +61,7 @@ public class ExpansionsController {
         return "redirect:/expansions";
     }
 
-    @RequestMapping(value="/expansions/update/{id}", method = RequestMethod.POST)
+    @RequestMapping(value="/expansions/update/{id}", method = RequestMethod.GET)
     public String update(@PathVariable("id")Integer id, Model model) {
     	Expansion expansion = expansionsFacadeProxy.getExpansionById(id);
         expansionsFacadeProxy.update(expansion);
