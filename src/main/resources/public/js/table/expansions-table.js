@@ -3,7 +3,7 @@ $(document).ready(function() {
         "bFilter":false,
         "processing": true,
         "serverSide": true,
-        "ajax": "/expansions/data",
+        "ajax": "/cards/expansions/data",
         "columns": [
             {"data":"expansionId"},
             {"data":"name"},
@@ -11,7 +11,7 @@ $(document).ready(function() {
             {
                 "data": null,
                 "render": function (data, type, row, meta) {
-                    return '<a href="/expansions/update/' + row['expansionId'] + '" class="editor_edit">Edit</a> | <a href="/expansions/delete/' + row['expansionId'] + '" class="editor_remove">Delete</a>';
+                    return '<a href="/cards/expansions/update/' + row['expansionId'] + '" class="editor_edit">Edit</a> | <a href="/cards/expansions/delete/' + row['expansionId'] + '" class="editor_remove">Delete</a>';
                 }
             }
         ]
