@@ -18,6 +18,6 @@ public class Expansion {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date launchDate;
 	private Integer expansionCategoryId;
-	private boolean isPromo;
-	private boolean isLegal;
+	private boolean promo;
+	private boolean legal;
 }
