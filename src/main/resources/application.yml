@@ -4,7 +4,7 @@ server:
 rest.client:
   cards.url: http://localhost:8081
   
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds=40000
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 20000
 
 logging:
   level:
