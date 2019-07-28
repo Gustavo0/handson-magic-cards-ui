@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class Expansion {
 	private Integer expansionId;
 	private String name;
-	private String ptBrName;
+	private String portugueseName;
 	private String linkName;
 	private String code;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
