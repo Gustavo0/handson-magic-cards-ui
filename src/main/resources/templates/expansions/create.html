@@ -12,24 +12,24 @@
                     <h2>Expansions List</h2>
                 </div>
                 <form action="/expansions/create" method="post">
-                  	<label for="expansionId">Expasion Id:</label>
-	                <input type="text" id="expansionId" name="expansionId" th:value="expansionId"/><br /><br />
+                  	<label for="expansionId">Expansion Id:</label>
+	                <input type="text" id="expansionId" name="expansionId"/><br /><br />
 	                <label for="name">Name:</label>
-	                <input type="text" id="name" name="name" th:value="*{name}"/><br /><br />
+	                <input type="text" id="name" name="name"/><br /><br />
 	                <label for="portugueseName">Portuguese Name:</label>
-	                <input type="text" id="portugueseName" name="portugueseName" th:value="*{portugueseName}"/><br /><br />
+	                <input type="text" id="portugueseName" name="portugueseName"/><br /><br />
 	                <label for="linkName">Link Name:</label>
-	                <input type="text" id="linkName" name="linkName" th:value="*{linkName}"/><br /><br />
+	                <input type="text" id="linkName" name="linkName"/><br /><br />
 	                <label for="code">Code:</label>
-	                <input type="text" id="code" name="code" th:value="*{code}"/><br /><br />
+	                <input type="text" id="code" name="code"/><br /><br />
 	                <label for="launchDate">Launch Date:</label>
-	                <input type="date" id="launchDate" name="launchDate" th:value="*{{launchDate}}"/><br /><br />
-	                <label for="expasionCategoryId">Expasion Category:</label>
-	                <input type="text" id="expasionCategoryId" name="expasionCategoryId" th:value="*{expasionCategoryId}"/><br /><br />
+	                <input type="date" id="launchDate" name="launchDate"/><br /><br />
+	                <label for="expansionCategoryId">Expansion Category:</label>
+	                <input type="text" id="expansionCategoryId" name="expansionCategoryId"/><br /><br />
 	                <label for="isPromo">Promo:</label>
-	                <input th:type="checkbox" id="isPromo" th:name="isPromo" th:field="*{isPromo}" th:value="*{{isPromo}}"/><br /><br />
+	                <input th:type="checkbox" id="isPromo" th:name="isPromo"/><br /><br />
 	                <label for="isLegal">Legal:</label>
-	                <input th:type="checkbox" id="isLegal" th:name="isLegal" th:field="*{isLegal}" th:value="*{{isLegal}}"/><br /><br />
+	                <input th:type="checkbox" id="isLegal" th:name="isLegal"/><br /><br />
 
                     <button type="submit">Submit</button>
                 </form>
